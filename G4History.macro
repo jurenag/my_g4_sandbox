@@ -1,0 +1,35 @@
+/run/verbose 2
+/tracking/verbose 2
+/vis/scene/create
+/vis/open OGL
+/vis/sceneHandler/create OGL
+/vis/sceneHandler/attach
+/vis/viewer/create ! ! 600
+/vis/viewer/refresh
+/vis/scene/notifyHandlers
+/vis/viewer/set/style wireframe
+/vis/viewer/refresh
+/vis/viewer/set/viewpointThetaPhi
+/vis/viewer/refresh
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world -1 -1 none m 0 0 0 0 0 0
+/vis/sceneHandler/attach
+/tracking/storeTrajectory 2
+/vis/scene/add/trajectories smooth
+/tracking/storeTrajectory 2
+/vis/scene/notifyHandlers
+/vis/scene/endOfEventAction accumulate
+/run/beamOn 1
+/vis/scene/notifyHandlers scene-0
+/vis/scene/notifyHandlers scene-1
+/run/beamOn 1
+/run/beamOn 1
+/run/beamOn 1
+/run/beamOn 1
+/run/beamOn 1
+/run/beamOn 1
+/run/beamOn 1
+/run/beamOn 1
+/run/beamOn 1
+/run/beamOn 1
