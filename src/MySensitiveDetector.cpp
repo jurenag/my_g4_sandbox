@@ -14,6 +14,7 @@ MySensitiveDetector::~MySensitiveDetector()
 
 void MySensitiveDetector::Initialize(G4HCofThisEvent * hcc) //This method is invoked at the beginning of each event.
 {
+    isFirstStepInVolume = true;
     hc = new G4THitsCollection<MyHit>(detName, colName);
     auto hcID = G4SDManager::GetSDMpointer()->GetCollectionID(colName);
     hcc->AddHitsCollection(hcID, hc);
@@ -21,15 +22,15 @@ void MySensitiveDetector::Initialize(G4HCofThisEvent * hcc) //This method is inv
 
 G4bool MySensitiveDetector::ProcessHits(G4Step * aStep, G4TouchableHistory * th)
 {
-    G4bool registered_a_hit = false;
-    if(aStep->IsFirstStepInVolume()){//this condition of first step in volume does not work as I expected, check how the program works!
-        registered_a_hit = true;
+    G4bool temp = isFirstStepInVolume;
+    if(isFirstStepInVolume){
         MyHit * aHit = new MyHit();
-        aHit->SetSensorID(aStep->GetTrack()->GetVolume()->GetCopyNo()); //here I have to take the touchable and its replica number, instead of the volume and its copy number I think
+        aHit->SetSensorID(aStep->GetTrack()->GetVolume()->GetCopyNo());
         aHit->SetInitHitPos(G4ThreeVector(aStep->GetPreStepPoint()->GetPosition()));
         hc->insert(aHit);
+        isFirstStepInVolume = false;
     }
-    return registered_a_hit?true:false;
+    return temp?true:false;
 }
 
 void MySensitiveDetector::EndOfEvent(G4HCofThisEvent * hcc)

@@ -18,4 +18,5 @@ class MySensitiveDetector : public G4VSensitiveDetector{
     private:
         G4THitsCollection<MyHit> * hc;
         G4String detName, colName;
+        G4bool isFirstStepInVolume;
 };
