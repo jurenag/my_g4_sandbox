@@ -1,0 +1,6 @@
+/home/julio/Documents/backup_capsule/git_repositories/my_g4_sandbox/build/CMakeFiles/rebuild_cache.dir
+/home/julio/Documents/backup_capsule/git_repositories/my_g4_sandbox/build/CMakeFiles/edit_cache.dir
+/home/julio/Documents/backup_capsule/git_repositories/my_g4_sandbox/build/CMakeFiles/G4_sandbox.dir
+/home/julio/Documents/backup_capsule/git_repositories/my_g4_sandbox/build/src/CMakeFiles/rebuild_cache.dir
+/home/julio/Documents/backup_capsule/git_repositories/my_g4_sandbox/build/src/CMakeFiles/edit_cache.dir
+/home/julio/Documents/backup_capsule/git_repositories/my_g4_sandbox/build/src/CMakeFiles/G4OPSIM_SRC.dir

@@ -36,6 +36,6 @@ include(${Geant4_USE_FILE})
 ## Recurse through sub-directories
 add_subdirectory(src)
 
-add_executable(G4OpSim G4OpSim.cpp $<TARGET_OBJECTS:${CMAKE_PROJECT_NAME}_SRC>)
-target_include_directories(G4OpSim PRIVATE ${CMAKE_SOURCE_DIR}/src)
-target_link_libraries(G4OpSim ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
+add_executable(G4_sandbox G4_sandbox.cpp $<TARGET_OBJECTS:${CMAKE_PROJECT_NAME}_SRC>)
+target_include_directories(G4_sandbox PRIVATE ${CMAKE_SOURCE_DIR}/src)
+target_link_libraries(G4_sandbox ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
